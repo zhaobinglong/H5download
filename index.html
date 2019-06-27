@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+// https://www.jianshu.com/p/595140b3f953
+var device = function() {
+    var agent = navigator.userAgent.toLowerCase();
+    console.log(navigator)
+    var result = {
+        //获取当前操作系统
+        os: function() {
+            if(/|iphone|ipod|ipad|ios/.test(agent)) {
+                return 'ios';
+            }else{
+                return 'other';
+            }
+        }()
+    };
+    result.ios = result.os === 'ios'; //是否IOS
+    return result;
+};
+var de = device();
+if(de.ios){
+	// 跳转app store下载链接
+    window.location.href = "https://itunes.apple.com/cn/app/你的产品id"
+}else{
+   // 跳转安卓下载链接
+   window.location.href = "https://baidu.com"
+}
+</script>
+</html>
